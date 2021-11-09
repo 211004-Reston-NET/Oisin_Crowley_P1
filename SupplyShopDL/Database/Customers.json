@@ -1,0 +1,42 @@
+[
+  {
+    "CustomerID": "1",
+    "Name": "john",
+    "StreetAdd": "878 Rover Ln",
+    "City": "dallas",
+    "State": "tx",
+    "Email": "test@gmail.com",
+    "Phone": "4444444444",
+    "OrderID": "1"
+  },
+  {
+    "CustomerID": "2",
+    "Name": "Millie",
+    "StreetAdd": "444 Scary Road",
+    "City": "Columbus",
+    "State": "Georgia",
+    "Email": "Test@gmail.com",
+    "Phone": "4444444444",
+    "OrderID": "1"
+  },
+  {
+    "CustomerID": "3",
+    "Name": "Forrest ",
+    "StreetAdd": "145 Pickle Ln",
+    "City": "Atlanta",
+    "State": "Georgia",
+    "Email": "Test@yahoo.com",
+    "Phone": "4544544444",
+    "OrderID": "1"
+  },
+  {
+    "CustomerID": "4",
+    "Name": "Brian",
+    "StreetAdd": "123 South Shore",
+    "City": "Plymouth",
+    "State": "Ma",
+    "Email": "brian@test.com",
+    "Phone": "5555555555",
+    "OrderID": "1"
+  }
+]

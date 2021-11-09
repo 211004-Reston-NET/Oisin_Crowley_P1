@@ -1,0 +1,21 @@
+[
+ 
+  {
+    "itemId": 1,
+    "itemQuanity": 45,
+    "itemPrice": 5,
+    "itemName": "Pencil"
+  },
+  {
+    "itemId": 2,
+    "itemQuanity": 60,
+    "itemPrice": 5,
+    "itemName": "Pens"
+  },
+  {
+    "itemId": 3,
+    "itemQuanity": 30,
+    "itemPrice": 7,
+    "itemName": "Paper"
+  }
+]
