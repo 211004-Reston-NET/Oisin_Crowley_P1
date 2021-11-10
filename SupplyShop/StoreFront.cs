@@ -70,12 +70,6 @@ namespace SupplyShopModels
 
         
 
-        private int _orderid;
-        public int OrderID
-        {
-            get { return _orderid; }
-            set { _orderid = value; }
-        }
         
 
 

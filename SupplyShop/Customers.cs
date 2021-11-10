@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 namespace SupplyShopModels
 {
-    public partial class Customers
+    public class Customers
     {
          public Customers()
         {

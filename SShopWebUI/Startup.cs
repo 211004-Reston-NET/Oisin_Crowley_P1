@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SupplyShopDL;
+using SupplyShopBL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,12 @@ namespace SShopWebUI
 
 
             services.AddDbContext<SupplyShopDatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Reference2DB")));
-            services.AddControllersWithViews();
+            services.AddScoped<ICustomersBL, CustomersBL>();
+            services.AddScoped<IItemsBL, ItemsBL>();
+            services.AddScoped<IStoreFrontBL,StoreFrontBL>();
+            services.AddScoped<IOrdersBL, OrdersBL>();
+            services.AddScoped<ILineItemBL, LineItemBL>();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
