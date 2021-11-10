@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SShopWebUI.Models;
+using SupplyShopModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using SupplyShopModels;
+using TestWebMVC.Models;
 
-namespace SShopWebUI.Controllers
+namespace TestWebMVC.Controllers
 {
     public class HomeController : Controller
     {
@@ -22,7 +22,6 @@ namespace SShopWebUI.Controllers
         public IActionResult Index()
         {
             Customers test = new Customers();
-
             return View();
         }
 
