@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SupplyShopBL;
-using SupplyShopModels;
-using SupShopWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,61 +8,55 @@ using System.Threading.Tasks;
 
 namespace SupShopWebUI.Controllers
 {
-    public class CustomerController : Controller
+    public class OrderController : Controller
     {
-        private ICustomersBL _custBL;
+        private IOrdersBL _ordersBL;
 
-        public CustomerController(ICustomersBL p_custBL)
+        public OrderController(IOrdersBL p_ordersBL)
         {
-            _custBL = p_custBL;
+            _ordersBL = p_ordersBL;
         }
-        // GET: CustomerController
+        
+        // GET: OrderController
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: CustomerController/Details/5
+        // GET: OrderController/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: CustomerController/Create
+        // GET: OrderController/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: CustomerController/Create
+        // POST: OrderController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(CustomerVM custVM)
+        public ActionResult Create(IFormCollection collection)
         {
-           if (ModelState.IsValid)
+            try
             {
-                _custBL.AddCustomer(new Customers()
-                {
-                    CustomerName = custVM.CustomerName,
-                    CustCity = custVM.CustCity,
-                    CustStreetAdd = custVM.CustStreetAdd,
-                    CustState = custVM.CustState,
-                    CustEmail = custVM.CustEmail,
-                    CustPhone = custVM.CustPhone,
-                    CustZip = custVM.CustZip
-                });
-                
+                return RedirectToAction(nameof(Index));
             }
-            return RedirectToAction(nameof(Index));
+            catch
+            {
+                return View();
+            }
         }
 
-        // GET: CustomerController/Edit/5
+        // GET: OrderController/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: CustomerController/Edit/5
+        // POST: OrderController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -79,13 +71,13 @@ namespace SupShopWebUI.Controllers
             }
         }
 
-        // GET: CustomerController/Delete/5
+        // GET: OrderController/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: CustomerController/Delete/5
+        // POST: OrderController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

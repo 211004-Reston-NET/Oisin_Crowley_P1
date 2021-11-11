@@ -192,12 +192,6 @@ namespace SupplyShopDL.Migrations
                         .HasColumnType("varchar(50)")
                         .HasColumnName("Store_City");
 
-                    b.Property<int>("OrderID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
-
                     b.Property<string>("State")
                         .IsRequired()
                         .HasMaxLength(50)

@@ -35,9 +35,7 @@ namespace SupplyShopDL.Migrations
                     StreetAdd = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
                     Store_City = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
                     Store_State = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    Store_Zip = table.Column<int>(type: "int", nullable: false),
-                    ProductID = table.Column<int>(type: "int", nullable: false),
-                    OrderID = table.Column<int>(type: "int", nullable: false)
+                    Store_Zip = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

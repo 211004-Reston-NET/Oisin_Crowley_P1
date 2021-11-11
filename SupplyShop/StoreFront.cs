@@ -60,12 +60,7 @@ namespace SupplyShopModels
         }
         
 
-        private int _productID;
-        public int ProductID
-        {
-            get { return _productID; }
-            set { _productID = value; }
-        }
+      
         
 
         

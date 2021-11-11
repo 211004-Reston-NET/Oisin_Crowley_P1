@@ -9,7 +9,7 @@ using SupplyShopDL;
 namespace SupplyShopDL.Migrations
 {
     [DbContext(typeof(SupplyShopDatabaseContext))]
-    [Migration("20211108230248_infomigration")]
+    [Migration("20211111165456_infomigration")]
     partial class infomigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -193,12 +193,6 @@ namespace SupplyShopDL.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)")
                         .HasColumnName("Store_City");
-
-                    b.Property<int>("OrderID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
 
                     b.Property<string>("State")
                         .IsRequired()
