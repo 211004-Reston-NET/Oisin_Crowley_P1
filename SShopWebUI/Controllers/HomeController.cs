@@ -21,7 +21,7 @@ namespace SShopWebUI.Controllers
 
         public IActionResult Index()
         {
-            Customers test = new Customers();
+          //  Customers test = new Customers();
 
             return View();
         }

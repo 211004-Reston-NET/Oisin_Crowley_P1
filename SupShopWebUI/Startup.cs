@@ -32,6 +32,7 @@ namespace SupShopWebUI
             services.AddScoped<IStoreFrontBL, StoreFrontBL>();
             services.AddScoped<IOrdersBL, OrdersBL>();
             services.AddScoped<ILineItemBL, LineItemBL>();
+            services.AddScoped<IRepository, RepositoryCloud>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 

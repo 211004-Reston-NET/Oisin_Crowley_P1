@@ -56,7 +56,7 @@ namespace SShopWebUI.Controllers
       public IActionResult Create(StoreFrontVM storeVM)
         {
 
-            Customers test = new Customers();
+           // Customers test = new Customers();
             //// _storeBL.AddStoreFront(new Customers()
             // {
 

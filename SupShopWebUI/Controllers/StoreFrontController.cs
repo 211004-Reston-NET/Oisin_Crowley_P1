@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SupplyShopBL;
+using SupplyShopModels;
+using SupShopWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +23,12 @@ namespace SupShopWebUI.Controllers
         // GET: StoreFrontController
         public ActionResult Index()
         {
-            return View();
+            //list of stores from business layer 
+            //converted that model of stores in a storefrontVM using select method
+            // changed it to a list to a TOList()
+            return View(_storeBL.GetAllStores()
+                .Select(store => new StoreFrontVM(store)).ToList()
+                ); ;
         }
 
         // GET: StoreFrontController/Details/5
@@ -39,16 +46,29 @@ namespace SupShopWebUI.Controllers
         // POST: StoreFrontController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Create(StoreFrontVM storeVM)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
+
+                _storeBL.AddStoreFront(new StoreFront()
             {
-                return View();
+                StoreName = storeVM.StoreName,
+                StreetAdd = storeVM.StreetAdd,
+                City = storeVM.City,
+                State = storeVM.State,
+                Zip = storeVM.Zip
+            });
+
+            return RedirectToAction(nameof(Index));
+
+
             }
+
+            return View();
+           
+
+           
         }
 
         // GET: StoreFrontController/Edit/5

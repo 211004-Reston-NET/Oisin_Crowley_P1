@@ -1,0 +1,43 @@
+﻿@*@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model SupShopWebUI.Models.StoreFrontVM
+<h1> Add a Storefront </h1>
+
+
+<form asp-action="Create">
+
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class=" mb-3">
+
+        <label asp-for="StoreName" class="form-label">Store Name</label>
+        <input asp-for="StoreName" type="text" class="form-control" />
+        <span asp-validation-for="StoreName"></span>
+
+    </div>
+    <div class=" mb-3">
+        <label asp-for="StreetAdd" class="form-label">Street Address</label>
+        <input asp-for="StreetAdd" type="text" class="form-control" />
+        <span asp-validation-for="StreetAdd" class=" text-danger"></span>
+    </div>
+    <div class=" mb-3">
+        <label asp-for="City" class="form-label">City</label>
+        <input asp-for="City" type="text" class="form-control" />
+        <span asp-validation-for="City" class=" text-danger"></span>
+    </div>
+    <div class=" mb-3">
+        <label asp-for="State" class="form-label">State</label>
+        <input asp-for="State" type="text" class="form-control" />
+        <span asp-validation-for="State" class=" text-danger"></span>
+    </div>
+    <div class=" mb-3">
+        <label asp-for="Zip" class="form-label">Zip</label>
+        <input asp-for="Zip" type="number" class="form-control" />
+        <span asp-validation-for="Zip" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" value="Create">Submit</button>
+
+</form>
