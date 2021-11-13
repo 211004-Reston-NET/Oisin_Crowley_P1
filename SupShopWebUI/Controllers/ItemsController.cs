@@ -42,6 +42,8 @@ namespace SupShopWebUI.Controllers
         }
 
 
+        
+
         public IActionResult Search(string searchString)
         {
             var items = from it in _itemsBL.GetAllItems()

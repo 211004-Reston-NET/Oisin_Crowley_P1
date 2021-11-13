@@ -71,6 +71,12 @@ namespace SupShopWebUI.Controllers
            
         }
 
+        public ActionResult StoreInv(int p_id)
+        {
+            return View(_storeBL.GetStoreProducts(p_id)
+                .Select(it => new ItemsVM(it)).ToList());
+        }
+
         // GET: StoreFrontController/Edit/5
         public ActionResult Edit(int id)
         {

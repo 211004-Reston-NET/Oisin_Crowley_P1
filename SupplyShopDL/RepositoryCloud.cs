@@ -112,12 +112,14 @@ namespace SupplyShopDL
             return _context.StoreFronts.Find(p_id);
         }
 
-        public List<Items> GetStoreProducts(StoreFront p_store)
+        public List<Items> GetStoreProducts(int p_id)
         {
 
             //Query Santax 
             return _context.Items
-            .Where(it => it.StoreID == p_store.StoreID).ToList();
+            .Where(it => it.StoreID == p_id).ToList();
+            
+            
 
 
                     

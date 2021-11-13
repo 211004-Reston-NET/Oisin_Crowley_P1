@@ -35,7 +35,7 @@ namespace SupplyShopDL
 
          List<Orders> GetAllOrders();
 
-         List<Items> GetStoreProducts(StoreFront p_store);
+         List<Items> GetStoreProducts(int p_id);
 
           Orders AddOrder(Orders p_orders);
 

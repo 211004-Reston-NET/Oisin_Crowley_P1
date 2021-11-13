@@ -34,9 +34,9 @@ namespace SupplyShopBL
             return listAllStoreFront;
         }
 
-        public List<Items> GetStoreProducts(StoreFront p_store)
+        public List<Items> GetStoreProducts(int p_id)
         {
-           return _repo.GetStoreProducts(p_store);
+           return _repo.GetStoreProducts(p_id);
         }
 
         public StoreFront GetStoreByID(int p_id)

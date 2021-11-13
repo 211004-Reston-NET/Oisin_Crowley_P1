@@ -21,7 +21,8 @@ namespace SupShopWebUI.Controllers
         // GET: CustomerController
         public ActionResult Index()
         {
-            return View();
+            return View(_custBL.GetAllCustomers()
+                .Select(cus => new CustomerVM(cus)).ToList());
         }
 
         // GET: CustomerController/Details/5
@@ -53,9 +54,9 @@ namespace SupShopWebUI.Controllers
                     CustPhone = custVM.CustPhone,
                     CustZip = custVM.CustZip
                 });
-                
+                return RedirectToAction(nameof(Index));
             }
-            return RedirectToAction(nameof(Index));
+            return View();
         }
 
         // GET: CustomerController/Edit/5
