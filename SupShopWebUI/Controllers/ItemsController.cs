@@ -88,31 +88,30 @@ namespace SupShopWebUI.Controllers
         // POST: ItemsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Items itVM)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            
+
+            return View();
         }
+    
 
         // GET: ItemsController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int p_id)
         {
-            return View();
+            //passing the products to the delete view 
+            return View(new ItemsVM(_itemsBL.GetProductbyID(p_id)));
         }
 
         // POST: ItemsController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int ProductID, IFormCollection collection)
         {
             try
             {
+                Items itToBeDeleted = _itemsBL.GetProductbyID(ProductID);
+                _itemsBL.DeleteItems(itToBeDeleted);
                 return RedirectToAction(nameof(Index));
             }
             catch

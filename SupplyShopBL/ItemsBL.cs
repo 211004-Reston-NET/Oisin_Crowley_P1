@@ -24,7 +24,12 @@ namespace SupplyShopBL
                 return _repo.AddItems(p_items);
             }
 
-            public List<Items> GetAllItems()
+        public Items DeleteItems(Items p_it)
+        {
+            return _repo.DeleteItems(p_it);
+        }
+
+        public List<Items> GetAllItems()
             {
                 List<Items>listOfItems = _repo.GetAllItems();
                 for (int i = 0; i< listOfItems.Count; i++)

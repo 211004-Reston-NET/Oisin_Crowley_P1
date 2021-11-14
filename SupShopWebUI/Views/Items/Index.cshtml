@@ -40,6 +40,8 @@
             <td>@Html.DisplayFor(modelItem => item.itemDesc)</td>
             <td>@Html.DisplayFor(modelItem => item.Category)</td>
             <td>@Html.DisplayFor(modelItem => item.itemQuanity)</td>
+            <td><button class="btn btn-primary">@Html.ActionLink("Restock","Edit", new { p_id = item.ProductID },new { @style = "color:white;" })</button></td>
+            <td><button class="btn btn-danger">@Html.ActionLink("Delete","Delete", new { p_id = item.ProductID }, new { @style = "color:white;" })</button></td>
             
         </tr>
     }

@@ -132,20 +132,27 @@ namespace SupplyShopDL
         /// <returns></returns>
           public Items UpdateInventory(Items p_it)
           {
-                Items invUpdated = new Items();
+                
                
-                _context.Items.Update(invUpdated);
+                _context.Items.Update(p_it);
 
                 _context.SaveChanges();
 
                 return p_it;
           }
 
+        public Items DeleteItems(Items p_it)
+        {
+            _context.Items.Remove(p_it);
+            _context.SaveChanges();
+            return p_it;
+        }
+
         //   public Model.Orders PlaceOrder(LineItems p_lineitems, Model.Orders p_Orders)
         //   {
-              
+
         //   }
 
-       
+
     }
 }

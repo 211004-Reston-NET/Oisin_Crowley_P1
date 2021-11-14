@@ -14,5 +14,7 @@ namespace SupplyShopBL
         Items GetProductbyID (int p_id);
 
         Items UpdateInventory(Items p_it, int p_howMuchAdd);
+
+        Items DeleteItems(Items p_it);
     }
 }

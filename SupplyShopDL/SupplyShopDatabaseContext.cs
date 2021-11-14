@@ -153,7 +153,7 @@ namespace SupplyShopDL
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Items)
                     .HasForeignKey(d => d.StoreID)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("fok_StoreID");
             });
 

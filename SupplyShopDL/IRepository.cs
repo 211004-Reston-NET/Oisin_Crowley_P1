@@ -48,5 +48,7 @@ namespace SupplyShopDL
         /// <param name="p_item"></param>
         /// <returns></returns>
            Items UpdateInventory(Items p_it);
+
+        Items DeleteItems(Items p_it);
     }
 }
