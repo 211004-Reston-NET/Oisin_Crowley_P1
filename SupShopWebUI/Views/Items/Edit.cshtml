@@ -3,15 +3,30 @@
 *@
 @{
 }
-@model SupShopWebUI.Models.ItemsVM
+@model SupplyShopModels.Items
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
 <h1> Restock Quantity </h1>
 
 <form asp-action="Edit">
 
     <div asp-validation-summary="ModelOnly"></div>
-    <div class=" mb-3">
-     
+    <input type="hidden" asp-for="ProductID" />
 
-    <button type="submit" class="btn btn-primary" value="Create">Submit</button>
+    <div class=" mb-3">
+        <label asp-for="itemQuanity" class="form-label">Item Quantity</label>
+        <input asp-for="itemQuanity" type="number" class="form-control" />
+        <span asp-validation-for="itemQuanity" class=" text-danger"></span>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary" value="Edit">Restock</button>
+
 
 </form>

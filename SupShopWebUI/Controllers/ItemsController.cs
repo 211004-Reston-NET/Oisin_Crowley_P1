@@ -80,19 +80,34 @@ namespace SupShopWebUI.Controllers
         }
 
         // GET: ItemsController/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int p_id)
         {
-            return View();
+            return View(_itemsBL.GetProductbyID(p_id));
         }
 
         // POST: ItemsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Items itVM)
+        public ActionResult Edit(int p_id, ItemsVM it)
         {
-            
 
-            return View();
+            try
+            {
+
+
+            
+            var itemToUpdate = _itemsBL.GetProductbyID(p_id);
+                itemToUpdate.itemQuanity = it.itemQuanity;
+                    
+            
+            _itemsBL.UpdateInventory(itemToUpdate);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+            
         }
     
 

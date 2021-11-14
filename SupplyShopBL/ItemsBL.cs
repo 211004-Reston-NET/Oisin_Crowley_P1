@@ -59,9 +59,9 @@ namespace SupplyShopBL
             return itemsFound;
         }
 
-        public Items UpdateInventory(Items p_it, int p_howMuchAdd)
+        public Items UpdateInventory(Items p_it)
         {
-            p_it.itemQuanity += p_howMuchAdd;
+            
 
             return _repo.UpdateInventory(p_it);
         }
