@@ -8,7 +8,7 @@
 <br />
 <br />
 
-<form asp-controller="Customer" asp-action="Search" method="get">
+<form asp-controller="Customer" asp-action="Index" method="get">
     <p>
         Product: <input type="text" name="SearchString" />
         <input type="submit" value="Filter" />
@@ -37,6 +37,7 @@
     <td>@Html.DisplayFor(modelItem => item.CustZip)</td>
     <td>@Html.DisplayFor(modelItem => item.CustPhone)</td>
     <td>@Html.DisplayFor(modelItem => item.CustEmail)</td>
+    <td><button class="btn btn-primary">@Html.ActionLink("Info", "Details", new { p_id = item.CustomerId }, new { @style = "color:white;" })</button></td>
 </tr>
     }
 

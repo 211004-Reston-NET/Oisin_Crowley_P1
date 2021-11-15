@@ -34,7 +34,7 @@ namespace SupShopUI
 
                     Console.WriteLine("How much inventory do you want to add?");
                     int addInven = Int32.Parse(Console.ReadLine());
-                    _itemsBL.UpdateInventory(itemFound, addInven);
+                    // _itemsBL.UpdateInventory(itemFound, addInven);
 
 
                 }

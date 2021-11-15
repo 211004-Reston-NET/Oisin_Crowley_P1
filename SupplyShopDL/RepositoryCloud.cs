@@ -94,7 +94,20 @@ namespace SupplyShopDL
 
          public Customers GetCustomerbyID(int p_id)
         {
-           return _context.Customers.Find(p_id);
+           return _context.Customers.AsNoTracking().FirstOrDefault(cust => cust.CustomerId == p_id);
+        }
+
+        public List<Customers> SearchFunction(string searchString)
+        {
+            var customer = from cust in _context.Customers
+                           select cust;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                customer = customer.Where(cu => cu.CustomerName!.Contains(searchString));
+            }
+
+            return customer.ToList();
         }
 
 

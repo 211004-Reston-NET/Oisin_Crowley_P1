@@ -19,16 +19,34 @@ namespace SupShopWebUI.Controllers
             _custBL = p_custBL;
         }
         // GET: CustomerController
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(_custBL.GetAllCustomers()
-                .Select(cus => new CustomerVM(cus)).ToList());
+            if (searchString != null)
+            {
+                return View(_custBL.SearchFunction(searchString));
+            }
+            else
+            {
+
+                return View(_custBL.GetAllCustomers()
+                  .Select(it => new CustomerVM(it)).ToList());
+                
         }
+            }
+            
 
         // GET: CustomerController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int p_id)
         {
-            return View();
+            try
+            {
+            return View(new CustomerVM((_custBL.GetCustomerbyID(p_id))));
+            }
+            catch
+            {
+                return View();
+            }
+            
         }
 
         // GET: CustomerController/Create

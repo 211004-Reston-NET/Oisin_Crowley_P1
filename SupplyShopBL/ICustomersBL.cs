@@ -22,5 +22,7 @@ namespace SupplyShopBL
 
         Customers GetCustomerbyID(int p_id);
 
+        List<Customers> SearchFunction(string searchString);
+
     }
 }

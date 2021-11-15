@@ -50,5 +50,7 @@ namespace SupplyShopDL
            Items UpdateInventory(Items p_it);
 
         Items DeleteItems(Items p_it);
+
+        List<Customers> SearchFunction(string searchString);
     }
 }

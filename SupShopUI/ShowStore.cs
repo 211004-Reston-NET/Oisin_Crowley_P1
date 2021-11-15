@@ -20,17 +20,17 @@ namespace SupShopUI
 
 
         }  
-        public void Display()
+         public void Display()
         {
-           List<Items> listOfItems = _storeBL.GetStoreProducts(StoreSelect._findStore);
-            foreach (Items items in listOfItems)
-            {
-                Console.WriteLine("==============");
-            Console.WriteLine(items);
-                Console.WriteLine("===============");
-            }
-            Console.WriteLine("[0] Go Back");
-        }
+        //    List<Items> listOfItems = _storeBL.GetStoreProducts(StoreSelect._findStore);
+        //     foreach (Items items in listOfItems)
+        //     {
+        //         Console.WriteLine("==============");
+        //     Console.WriteLine(items);
+        //         Console.WriteLine("===============");
+        //     }
+        //     Console.WriteLine("[0] Go Back");
+         }
 
         public DirectoryChoice YourChoice()
         {

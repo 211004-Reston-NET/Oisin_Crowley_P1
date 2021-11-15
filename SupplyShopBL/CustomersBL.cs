@@ -67,11 +67,18 @@ namespace SupplyShopBL
 
             if (custFound == null)
             {
-                throw new Exception("Product was not found in inventory!");
+                throw new Exception("Customer was not found in inventory!");
             }
             return custFound;
         }
 
-        
+        public List<Customers> SearchFunction(string searchString)
+        {
+            List<Customers> listofCust = _repo.SearchFunction(searchString);
+
+            return listofCust;
+
+           
+        }
     }
 }
