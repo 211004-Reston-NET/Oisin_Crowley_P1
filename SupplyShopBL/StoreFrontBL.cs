@@ -50,6 +50,11 @@ namespace SupplyShopBL
             return storeFound;
         }
 
+        public StoreFront DeleteStore(StoreFront p_store)
+        {
+            return _repo.DeleteStore(p_store);
+        }
+
 
     }
 }

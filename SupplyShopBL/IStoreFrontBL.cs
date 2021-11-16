@@ -12,7 +12,7 @@ namespace SupplyShopBL
          List<Items> GetStoreProducts(int p_id);
 
         // List<StoreFront> GetStoreByID(int p_id);
-        
+         StoreFront DeleteStore(StoreFront p_store);
         
     }
 }

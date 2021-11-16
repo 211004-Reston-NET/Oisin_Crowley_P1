@@ -52,5 +52,13 @@ namespace SupplyShopDL
         Items DeleteItems(Items p_it);
 
         List<Customers> SearchFunction(string searchString);
+        /// <summary>
+        /// Deletes a store front from the store list
+        /// </summary>
+        /// <param name="p_store">this is a store that is being passed</param>
+        /// <returns></returns>
+         StoreFront DeleteStore(StoreFront p_store);
+
+        Customers DeleteCust(Customers p_cust);
     }
 }

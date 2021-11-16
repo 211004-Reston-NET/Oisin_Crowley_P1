@@ -1,6 +1,45 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
 }
-@model IEnumerable<SupShopWebUI.Models.OrdersVM>
+@model IEnumerable<SupShopWebUI.Models.ItemsVM>
+@{
+    ViewData["itemName"] = "Search";
+}
+
+
+<h1> Place an Order </h1>
+
+
+
+
+
+
+
+
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Item Name</th>
+        <th>Item Price</th>
+        <th>Description</th>
+        <th>Category</th>
+        
+    </tr>
+
+    @foreach (ItemsVM item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.itemName)</td>
+            <td>@Html.DisplayFor(modelItem => item.itemPrice)</td>
+            <td>@Html.DisplayFor(modelItem => item.itemDesc)</td>
+            <td>@Html.DisplayFor(modelItem => item.Category)</td>
+            
+            <td><button class="btn btn-primary">@Html.ActionLink("Order", "Edit", new { p_id = item.ProductID }, new { @style = "color:white;" })</button></td>
+           
+
+        </tr>
+    }
+
+
+
+</table>

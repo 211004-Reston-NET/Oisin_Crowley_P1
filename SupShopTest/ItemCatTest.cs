@@ -61,6 +61,7 @@ namespace SupShopTest
         [InlineData("Org@nization")] //inline data will be the data being passed to the parmeter of this method to be tested on
         [InlineData("7Fluid2s")] // you can add more data
         [InlineData("Cont@ainter!")]
+        [InlineData("N0th!ing")]
         public void ItCatShouldFailAllTheseTests(string p_input) //can  also pass in multiple parameters 
         {
             // Arrange does need the string initiated when doing inline data as we feed in mulitple items

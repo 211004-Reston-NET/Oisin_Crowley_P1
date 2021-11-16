@@ -3,7 +3,7 @@
 *@
 @{
 }
-@model SupplyShopModels.Items
+@model SupShopWebUI.Models.ItemsVM
 
 @{
     ViewData["Title"] = "Edit";
@@ -13,7 +13,7 @@
 <h1> Restock Quantity </h1>
 
 <form asp-action="Edit">
-
+    
     <div asp-validation-summary="ModelOnly"></div>
     <input type="hidden" asp-for="ProductID" />
 

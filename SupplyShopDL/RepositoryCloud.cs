@@ -161,6 +161,21 @@ namespace SupplyShopDL
             return p_it;
         }
 
+
+        public StoreFront DeleteStore(StoreFront p_store)
+        {
+            _context.StoreFronts.Remove(p_store);
+            _context.SaveChanges();
+            return p_store;
+        }
+
+        public Customers DeleteCust(Customers p_cust)
+        {
+            _context.Customers.Remove(p_cust);
+            _context.SaveChanges();
+            return p_cust;
+        }
+
         //   public Model.Orders PlaceOrder(LineItems p_lineitems, Model.Orders p_Orders)
         //   {
 

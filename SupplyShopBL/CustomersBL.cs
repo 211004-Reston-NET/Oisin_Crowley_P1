@@ -80,5 +80,10 @@ namespace SupplyShopBL
 
            
         }
+
+         public Customers DeleteCust(Customers p_cust)
+         {
+             return _repo.DeleteCust(p_cust);
+         }
     }
 }

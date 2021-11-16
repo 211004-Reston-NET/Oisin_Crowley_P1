@@ -24,5 +24,7 @@ namespace SupplyShopBL
 
         List<Customers> SearchFunction(string searchString);
 
+          Customers DeleteCust(Customers p_cust);
+
     }
 }
