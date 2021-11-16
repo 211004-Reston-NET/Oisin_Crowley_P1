@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model SupShopWebUI.Models.CustomerVM
+
+<h1> Customer Info </h1>
+
+
+<div>
+    <dl>
+        <dt>
+            Name:
+            <span class="col-sm-10" style="font-weight: normal">@Html.DisplayFor(model => model.CustomerName)</span>
+        </dt>
+        <dt>
+            Street Address:
+            <span class="col-sm-10" style="font-weight: normal">@Html.DisplayFor(model => model.CustStreetAdd)</span>
+        </dt>
+        <dt>
+            City:
+            <span class="col-sm-10" style="font-weight: normal">@Html.DisplayFor(model => model.CustCity)</span>
+        </dt>
+        <dt>
+            State:
+            <span class="col-sm-10" style="font-weight: normal">@Html.DisplayFor(model => model.CustState)</span>
+        </dt>
+        <dt>
+            Zip:
+            <span class="col-sm-10" style="font-weight: normal">@Html.DisplayFor(model => model.CustZip)</span>
+        </dt>
+        <dt>
+            Phone:
+            <span class="col-sm-10" style="font-weight: normal">@Html.DisplayFor(model => model.CustPhone)</span>
+        </dt>
+        <dt>
+            Email:
+            <span class="col-sm-10" style="font-weight: normal">@Html.DisplayFor(model => model.CustEmail)</span>
+        </dt>
+    </dl>
+</div>

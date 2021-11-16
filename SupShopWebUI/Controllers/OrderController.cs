@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SupplyShopBL;
+using SupplyShopModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,10 @@ namespace SupShopWebUI.Controllers
         {
             try
             {
+                Orders order = new Orders();
+                
+
+
                 return RedirectToAction(nameof(Index));
             }
             catch

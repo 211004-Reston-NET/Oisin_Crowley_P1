@@ -19,19 +19,17 @@ namespace SupShopWebUI.Controllers
             _custBL = p_custBL;
         }
         // GET: CustomerController
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string SearchString = null)
         {
-            if (searchString != null)
+            if (SearchString != null)
             {
-                return View(_custBL.SearchFunction(searchString));
-            }
-            else
-            {
+                List<Customers> listOfcust = _custBL.GetCustomers(SearchString);
 
-                return View(_custBL.GetAllCustomers()
-                  .Select(it => new CustomerVM(it)).ToList());
-                
-        }
+                return View(listOfcust.Select(cust => new CustomerVM(cust)).ToList());
+            }
+            return View(_custBL.GetAllCustomers()
+                .Select(cust => new CustomerVM(cust)).ToList());
+        
             }
             
 
@@ -48,6 +46,23 @@ namespace SupShopWebUI.Controllers
             }
             
         }
+
+        public ActionResult Search(string SearchString)
+        {
+            try
+            {
+                List<Customers> listOfcust = _custBL.GetCustomers(SearchString);
+
+                return View(new CustomerVM(listOfcust));
+                    
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+       
 
         // GET: CustomerController/Create
         public ActionResult Create()

@@ -48,7 +48,9 @@ namespace SupplyShopDL
 
         public Orders AddOrder(Orders p_orders)
         {
+
             _context.Orders.Add(p_orders);
+
             _context.SaveChanges();
 
             return p_orders;
