@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SupplyShopBL;
 using SupplyShopModels;
+using SupShopWebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,9 @@ namespace SupShopWebUI.Controllers
         // GET: OrderController
         public ActionResult Index()
         {
-            return View();
+            return View(_ordersBL.GetAllOrders()
+                .Select(it => new OrdersVM(it)).ToList()
+                );
         }
 
         // GET: OrderController/Details/5
