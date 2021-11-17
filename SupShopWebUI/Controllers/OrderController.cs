@@ -13,10 +13,14 @@ namespace SupShopWebUI.Controllers
     public class OrderController : Controller
     {
         private IOrdersBL _ordersBL;
+        private ICustomersBL _custBL;
+        private IStoreFrontBL _storeBL;
 
-        public OrderController(IOrdersBL p_ordersBL)
+        public OrderController(IOrdersBL p_ordersBL, ICustomersBL p_custBl, IStoreFrontBL p_storeBL)
         {
             _ordersBL = p_ordersBL;
+            _custBL = p_custBl;
+            _storeBL = p_storeBL;
         }
         
         // GET: OrderController
@@ -36,6 +40,10 @@ namespace SupShopWebUI.Controllers
         // GET: OrderController/Create
         public ActionResult Create()
         {
+            List<Customers> listOfcust = _custBL.GetAllCustomers();
+            List<StoreFront> listofstores = _storeBL.GetAllStores();
+            ViewData["cust"] = listOfcust;
+            ViewData["stores"] = listofstores;
             return View();
         }
 
@@ -44,9 +52,10 @@ namespace SupShopWebUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
         {
+            
             try
             {
-                Orders order = new Orders();
+                Orders order = new Orders(); 
                 
 
 
