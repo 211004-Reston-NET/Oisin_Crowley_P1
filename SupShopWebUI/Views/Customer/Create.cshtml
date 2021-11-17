@@ -4,7 +4,7 @@
 @{
 }
 @model SupShopWebUI.Models.CustomerVM
-<h1> Add a Storefront </h1>
+<h1> Add a Customer </h1>
 
 
 <form asp-action="Create">
@@ -45,7 +45,7 @@
     </div>
 
     <div class=" mb-3">
-        <label asp-for="CustEmail" class="form-label">Email Addressr</label>
+        <label asp-for="CustEmail" class="form-label">Email Address</label>
         <input asp-for="CustEmail" type="text" class="form-control" />
         <span asp-validation-for="CustEmail" class="text-danger"></span>
     </div>

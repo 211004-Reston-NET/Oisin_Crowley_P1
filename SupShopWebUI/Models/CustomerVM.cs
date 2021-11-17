@@ -9,7 +9,7 @@ namespace SupShopWebUI.Models
     public class CustomerVM
 
     {
-        public CustomerVM(List<Customers> customers)
+        public CustomerVM()
         {
 
         }

@@ -47,20 +47,7 @@ namespace SupShopWebUI.Controllers
             
         }
 
-        public ActionResult Search(string SearchString)
-        {
-            try
-            {
-                List<Customers> listOfcust = _custBL.GetCustomers(SearchString);
-
-                return View(new CustomerVM(listOfcust));
-                    
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
 
        
 
